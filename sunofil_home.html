@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rabisun - Spiritual United Nations of Illinois</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFDC74;
+            color: #A4821D;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #A4821D;
+            gap: 10px;
+        }
+
+        header div {
+            flex: 1;
+        }
+
+        header div.left {
+            text-align: left;
+        }
+
+        header div.right {
+            text-align: right;
+        }
+
+        header a {
+            color: #FFDC74;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        header a:hover {
+            opacity: 0.8;
+        }
+
+        header img {
+            flex: 1;
+            max-width: 364px;
+            height: auto;
+            text-align: center;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            background-color: #F3C745;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            flex: 1;
+            padding: 12px 10px;
+            text-align: center;
+            color: #A4821D;
+            text-decoration: none;
+            border-right: 1px solid #917217;
+            font-size: 14px;
+            min-width: 80px;
+        }
+
+        nav a:last-child {
+            border-right: none;
+        }
+
+        nav a:hover {
+            background-color: #917217;
+        }
+
+        /* Banner Ad */
+        .banner-ad {
+            background-color: #F3C745;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 15px;
+            border-radius: 15px;
+            color: #A4821D;
+        }
+
+        /* Cover Video Section */
+        .cover-video {
+            background-color: #FFDC74;
+            padding: 30px 20px;
+            text-align: center;
+            margin: 15px;
+            border-radius: 10px;
+            border: 1px solid #917217;
+            position: relative;
+        }
+
+        .cover-video video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .cover-video .quote {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: clamp(14px, 5vw, 36px);
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-style: italic;
+            max-width: 90%;
+            z-index: 10;
+        }
+
+        /* Section Styles */
+        section {
+            margin: 15px;
+            background-color: #FFDC74;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #FFDC74;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #A4821D;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Who Are We Section */
+        .who-are-we {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .who-intro {
+            background-color: #F3C745;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .who-intro h4 {
+            color: #A4821D;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .who-text {
+            color: #A4821D;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Latest Content Section */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .content-item {
+            background-color: #F3C745;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            color: #A4821D;
+            font-size: 13px;
+        }
+
+        .content-item-label {
+            color: #917217;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .click-more {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .click-more button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #A4821D;
+        }
+
+        /* Goals & Strategies Section */
+        .goals-image {
+            background-color: #F3C745;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #A4821D;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            background-color: #F3C745;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .achievement-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #FFDC74;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+            border: 2px solid #917217;
+        }
+
+        .achievement-title {
+            color: #A4821D;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .achievement-text {
+            color: #917217;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #A4821D;
+            padding: 20px;
+            text-align: center;
+            color: #FFDC74;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: #FFDC74;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .logo-credit {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design - Tablet and up */
+        @media screen and (min-width: 768px) {
+            .who-are-we {
+                flex-direction: row;
+            }
+
+            .who-intro {
+                flex: 1;
+            }
+
+            .who-text {
+                flex: 1;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .achievements-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 15px;
+            }
+            .quote {
+                font-size: 48px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            body {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .quote {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="left">
+            <a href="#">
+                <div style="font-size: 24px;">🔍</div>
+                <div style="font-size: 12px;">Search</div>
+            </a>
+        </div>
+        <img src="Rabisun Logo.webp" alt="Rabisun Logo">
+        <div class="right">
+            <a href="#">
+                <div style="font-size: 24px;">💳</div>
+                <div style="font-size: 12px;">Donate</div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#"><b>Home</b></a>
+        <a href="#"><b>Our Mission</b></a>
+        <a href="#"><b>About Us</b></a>
+        <a href="#"><b>Contact</b></a>
+    </nav>
+
+    <!-- Banner Ad -->
+    <div class="banner-ad">
+        Horizontal Banner Ad
+    </div>
+
+    <!-- Cover Video -->
+    <div class="cover-video">
+        <video width="100%" height="auto" autoplay muted loop controls style="border-radius: 10px;">
+            <source src="sunofilcovervideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="quote">
+            "Feeding the body is where we begin. Nourishing hope is where our mission continues."
+        </div>
+    </div>
+
+    <!-- Who Are We Section -->
+    <section>
+        <h2>Who Are We?</h2>
+        <div class="who-are-we">
+            <div class="who-intro">
+                <img src="Rabisun Who Are We.webp" alt="Introduction" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
+            </div>
+            <div class="who-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Content Section -->
+    <section>
+        <h2>Latest Content</h2>
+        <p style="text-align: center; color: #917217; font-size: 12px; margin-bottom: 15px;"></p>
+        <div class="content-grid">
+            <div class="content-item">
+                <video width="100%" height="auto" controls style="border-radius: 8px; margin-top: 10px;">
+                    <source src="VID-20260701-WA0028.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content-item">
+                <video width="100%" height="auto" controls style="border-radius: 8px; margin-top: 10px;">
+                    <source src="VID-20260701-WA0030.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content-item">
+                <video width="100%" height="auto" controls style="border-radius: 8px; margin-top: 10px;">
+                    <source src="VID-20260701-WA0034.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content-item">
+                <video width="100%" height="auto" controls style="border-radius: 8px; margin-top: 10px;">
+                    <source src="VID-20260701-WA0040.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="click-more">
+            <button>⌄</button>
+            <p style="color: #917217; font-size: 11px;">(Click Down for More)</p>
+        </div>
+    </section>
+
+    <!-- Goals & Strategies Section -->
+    <section>
+        <h2>Goals & Strategies</h2>
+        <div class="goals-image">
+            <img src="IMG-20260701-WA0068.jpg" alt="Goals & Strategies" style="width: 100%; height: auto; border-radius: 8px;">
+            <br>
+            <br>
+            <p>Every day, we witness the extraordinary resilience of people who are simply need the right support to rise. Spiritual United Nations are committed to measurable impact, sustainable outcomes, and a future where everyone has access to the resources they need.
+
+Our team is dedicated to advancing community well-being through comprehensive support services. From essential food distribution to tailored mental-health guidance, personal coaching, and expert consulting to help individuals and families rebuild their strength, confidence, and future. 
+
+Our mission is to stand beside every person who needs a hand—offering care, guidance, and hope every step of the way. Hope becomes real when people feel supported—emotionally, practically, and personally.
+
+We believe strong communities are built on compassion and connection. That’s why our organization brings together donors and different kinds of specialists in varies sectors, so by this  we are addressing both immediate needs and long-term goals.</p>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section>
+        <h2>Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-item">
+                <div class="achievement-icon">⭐</div>
+                <div class="achievement-title">Our Mission</div>
+                <div class="achievement-text">Established <b>"Ukraine Food for Life"</b>,giving special attention to kids and families in Ukraine.</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-icon">🌍</div>
+                <div class="achievement-title">Reaching Out</div>
+                <div class="achievement-text">Reached over <b>$120,000</b> in funds to Ukrainian refugees providing housing, food, and everyday essentials.</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-icon">👐</div>
+                <div class="achievement-title">Finding Solutions</div>
+                <div class="achievement-text">Over <b>35,000 refugees</b> were impacted by our program and relief efforts.</div>
+            </div>
+        </div>
+        <div style="color: #A4821D; font-size: 13px; line-height: 1.5; margin-top: 20px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="#">Search</a>
+            <a href="#">Help</a>
+            <a href="#">Privacy & Security</a>
+            <a href="#">Feedback Survey</a>
+            <a href="#">S0B Policy</a>
+            <a href="#">Contacts</a>
+        </div>
+        <div class="logo-credit">
+            <img src="Rabisun Logo.webp" alt="Rabisun Logo" style="width: 300px; height: auto;">
+        </div>
+    </footer>
+</body>
+</html>
